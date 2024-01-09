@@ -1,8 +1,8 @@
 const Header = ({ course }) => <h1>{course}</h1>
 
 const Total = ({ parts }) => {
-	let total = 0;
-	parts.map((part) => total += part.exercises);
+	
+	const total = parts.reduce((accumulator, part) => accumulator + part.exercises, 0);
 
 	return (
 	<p>
